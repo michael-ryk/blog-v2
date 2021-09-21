@@ -1,0 +1,15 @@
+<%- include('partials/header'); -%>
+
+<h1>Home</h1>
+<p><%= homeContent %></p>
+
+<% postsList.forEach(function(element){ %>
+<%    console.log("home.ejs element.id: " + element._id); %>
+<h2><%= element.title %></h2>
+<p><%= element.content.substring(0,100) + " ..." %>
+    <a href="/posts/<%=element._id%>">Read More</a>
+</p>
+
+<% }); %>
+
+<%- include('partials/footer'); -%>
